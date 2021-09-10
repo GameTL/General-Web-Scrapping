@@ -16,19 +16,18 @@ from bs4 import BeautifulSoup
 from csv import writer
 import pytz
 import datetime
+import time
 SiteList = []
 
 class Site:
-    def __init__(self, name, link, file_compare, parent_link):
+    def __init__(self, name, link, file_compare, parent_link, scrape_attribute, scrape_section_title=None, scrape_section_date=None):
         self.Name = name
         self.Scrape_Link = link
         self.File_Compare = file_compare
         self.Parent_Link = parent_link
-ise = Site("Chula ISE", "http://www.ise.eng.chula.ac.th/news?gid=1-008-002-001&pn=1", "Chula_Recent_Compare.txt", "http://www.ise.eng.chula.ac.th/")
-SiteList.append(ise)
-
-for site in SiteList:
-    print(site.Name)
+        self.Scrape_Attribute = scrape_attribute
+        self.Scrape_Section_Title = scrape_section_title
+        self.Scrape_Section_Date = scrape_section_date
 
 ###############################################################################################
 ###############################################################################################
@@ -38,13 +37,23 @@ RECEPIENTS = ["limsila.limsila@gmail.com"]
 
 TIMEZONE = 'Asia/Bangkok'
 
+    # Website to Scrape
+chula_ise = Site("Chula ISE", "http://www.ise.eng.chula.ac.th/news?gid=1-008-002-001&pn=1", "Recent_Compare_Chula_ISE", 
+"http://www.ise.eng.chula.ac.th/",'''"ul", class_ = "documents-list"''', '''"span", class_ = "title trim"''', '''"span", class_ = "date"''')
+
+facebook_ise = Site("Facebook ISE","https://mbasic.facebook.com/isechula/","Recent_Compare_Facebook_ISE.txt", "https://mbasic.facebook.com/isechula/", 
+'''"article", class_ = "da ej ek"''')
+
+SiteList.append(chula_ise)
+SiteList.append(facebook_ise)
+
 
 
 ###############################################################################################
 ###############################################################################################
 # %%
 
-def __init_account_from_file():
+def __init_sender_account_from_file():
     global SENDER_EMAIL, SENDER_PASSWORD
     MODE = 'file_based'
     if MODE == "hard_code":
@@ -52,10 +61,18 @@ def __init_account_from_file():
         SENDER_PASSWORD = "" ### ENTER PASSWORD ###
     elif MODE == "file_based":
         # Go to README.txt for how enter Absolute Path
-        with open('C:/Users/Game/Documents/GitHub/account for Chula Newsletter.txt', "r") as account_file:
-            CONTENT = account_file.read().splitlines() # .splitlines() for deleting the /n
-            SENDER_EMAIL = CONTENT[0]
-            SENDER_PASSWORD = CONTENT[1]
+        try:
+            with open('C:/Users/Game/Documents/GitHub/account for Chula Newsletter.txt', "r") as account_file:
+                CONTENT = account_file.read().splitlines() # .splitlines() for deleting the /n
+                SENDER_EMAIL = CONTENT[0]
+                SENDER_PASSWORD = CONTENT[1]
+                print("")
+                print("Sender Email: " + SENDER_EMAIL)
+        except:
+            print("Error: Opening account failed")
+            time.sleep(2)
+        
+
 
 
 def sending_email(subject, body, sender_email, sender_password):
@@ -74,8 +91,11 @@ def sending_email(subject, body, sender_email, sender_password):
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.ehlo()
     server.starttls()
-
-    server.login(sender_email, sender_password) # NOTE 1
+    try: 
+        server.login(sender_email, sender_password) # NOTE 1'
+    except:
+        print("Error: Login into SMTP service")
+        time.sleep(2)
 
     #For loop, sending emails to all email recipients
     for recipient in RECEPIENTS:
@@ -107,6 +127,7 @@ def check_for_page_update(site):
         with open(site.File_Compare, "r") as Compare_File:
             if Compare_File.read() == str(page_section):
                 print("No update")
+                time.sleep(2)
             else:
                 with open(site.File_Compare, "w") as Overwrite_File:
                     Overwrite_File.write(str(page_section))
@@ -121,7 +142,7 @@ def check_for_page_update(site):
 def make_hyperlink():
     global body_hyperlink
     link1 = BeautifulSoup(str(page_section), "html.parser").find_all("li")
-    for a in BeautifulSoup(str(link1[0]), features="lxml").find_all('a', href=True):
+    for a in BeautifulSoup(str(link1[0]), features="html.parser").find_all('a', href=True):
         body_hyperlink = site.Parent_Link + a['href']
     print("created ", body_hyperlink)
 
@@ -156,17 +177,28 @@ def log_to_csv(site):
 
 # //div[contains(@class, "")]
 #Set the endpoint: Worldometers
+
 clear()
-__init_account_from_file()
+
 for site in SiteList:
+    print("Checking " + site.Name + "......")
     req = requests.get(site.Scrape_Link,'features="lxml"')
-    page_section = BeautifulSoup(req.text, "html.parser").find_all("ul", class_ = "documents-list")
+    page_section = BeautifulSoup(req.text, "html.parser").find_all(site.Scrape_Attribute)
     check_for_page_update(site)
     if update:
-        date1 = BeautifulSoup(str(page_section), "html.parser").find_all("span", class_ = "date")[0].text
-        title1 = BeautifulSoup(str(page_section), "html.parser").find_all("span", class_ = "title trim")[0].text
+        title1 = BeautifulSoup(str(page_section), "html.parser").find_all(site.Scrape_Section_Title)[0].text
+        date1 = BeautifulSoup(str(page_section), "html.parser").find_all(site.Scrape_Section_Date)[0].text
         subject = title1 + "[Python Bot]"
+        __init_sender_account_from_file()
         make_hyperlink() # returns body_hyperlink
         body_constructor(subject, body_hyperlink)
         sending_email(subject, body, SENDER_EMAIL, SENDER_PASSWORD)
         log_to_csv(site)
+        time.sleep(5)
+
+#%%
+req = requests.get("https://mbasic.facebook.com/isechula/")
+page_section = BeautifulSoup(req.text, "html.parser").find('article')
+print(page_section)
+# %%
+https://www.youtube.com/results?search_query=facebook+scrapperpython
