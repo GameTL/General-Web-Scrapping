@@ -44,8 +44,12 @@ if __name__ == '__main__' :
             file.write('"' + str(enity) + '",')
         file.write("\n")
     clearterminal.clear()
-    print('Cryto price logged: {}'.format(enitites))
-    time.sleep(5)
+    print('''Cryto price logged: {}
+
+
+DONE
+DONE'''.format(enitites))
+    time.sleep(3)
 
 
 
