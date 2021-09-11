@@ -606,3 +606,164 @@ console.warn: SearchSettings: "get: No settings file exists, new profile?" (new 
 JavaScript error: chrome://global/content/elements/browser-custom-element.js, line 1709: NotFoundError: No such JSWindowActor 'MarionetteEvents'
 JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
 JavaScript error: resource://gre/modules/Sqlite.jsm, line 1030: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Game\AppData\Local\Temp\rust_mozprofileUtGBhn\protections.sqlite
+1631293606307	geckodriver	INFO	Listening on 127.0.0.1:53817
+1631293609322	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Game\\AppData\\Local\\Temp\\rust_mozprofileX2DNan"
+*** You are running in headless mode.
+1631293609708	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Game\\AppData\\Local\\Temp\\rust_mozprofileX2DNan\\search.json.mozlz4", (void 0)))
+1631293610780	Marionette	INFO	Listening on port 53828
+1631293610874	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1631293612711	Marionette	INFO	Stopped listening on port 53828
+1631293613298	geckodriver	INFO	Listening on 127.0.0.1:53881
+1631293616311	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Game\\AppData\\Local\\Temp\\rust_mozprofilev8ZB2r"
+*** You are running in headless mode.
+1631293616651	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Game\\AppData\\Local\\Temp\\rust_mozprofilev8ZB2r\\search.json.mozlz4", (void 0)))
+1631293617688	Marionette	INFO	Listening on port 53894
+1631293617837	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://yep.video.yahoo.com/oath/js/1/oath-player.js, line 4: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585). ()
+JavaScript warning: https://yep.video.yahoo.com/oath/js/1/oath-player.js, line 4: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585). ()
+JavaScript warning: https://pagead2.googlesyndication.com/bg/HnbG7550cEFPwEcIWrjaIv4px_gX-25lqkC2fOkJQZY.js line 1 > eval line 3987 > eval line 1 > eval, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585). ()
+JavaScript error: https://ads.pubmatic.com/AdServer/js/user_sync.html?p=156107&s=176446&predirect=https%3A%2F%2Fpr-bh.ybp.yahoo.com%2Fsync%2Fpubmatic%2F, line 1: ReferenceError: CommonMeta is not defined
+JavaScript warning: https://pagead2.googlesyndication.com/bg/HnbG7550cEFPwEcIWrjaIv4px_gX-25lqkC2fOkJQZY.js line 1 > eval line 484 > eval line 1 > eval, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585). ()
+1631293623068	Marionette	INFO	Stopped listening on port 53894
+JavaScript error: , line 0: TypeError: ServiceWorker script at https://finance.yahoo.com/_service-worker.js for scope https://finance.yahoo.com/ encountered an error during installation.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x5A0009,name=PHttpChannel::Msg_DeletingChannel) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x5A0009,name=PHttpChannel::Msg_DeletingChannel) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x5A0009,name=PHttpChannel::Msg_DeletingChannel) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x5A0009,name=PHttpChannel::Msg_DeletingChannel) Channel closing: too late to send/recv, messages will be lost
+
+1631293623946	geckodriver	INFO	Listening on 127.0.0.1:54152
+1631293626958	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Game\\AppData\\Local\\Temp\\rust_mozprofileKWXbFt"
+*** You are running in headless mode.
+1631293627300	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Game\\AppData\\Local\\Temp\\rust_mozprofileKWXbFt\\search.json.mozlz4", (void 0)))
+1631293628332	Marionette	INFO	Listening on port 54163
+1631293628477	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://pagead2.googlesyndication.com/bg/HnbG7550cEFPwEcIWrjaIv4px_gX-25lqkC2fOkJQZY.js line 1 > eval line 3854 > eval, line 1: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585). ()
+1631293633213	Marionette	INFO	Stopped listening on port 54163
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: ServiceWorker script at https://finance.yahoo.com/_service-worker.js for scope https://finance.yahoo.com/ encountered an error during installation.
+JavaScript error: resource://gre/modules/Sqlite.jsm, line 1030: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Game\AppData\Local\Temp\rust_mozprofileKWXbFt\protections.sqlite
+1631293634019	geckodriver	INFO	Listening on 127.0.0.1:54344
+1631293637029	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Game\\AppData\\Local\\Temp\\rust_mozprofilezdSmFG"
+*** You are running in headless mode.
+1631293637374	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Game\\AppData\\Local\\Temp\\rust_mozprofilezdSmFG\\search.json.mozlz4", (void 0)))
+1631293638442	Marionette	INFO	Listening on port 54359
+1631293638550	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1631293639352	Marionette	INFO	Stopped listening on port 54359
+1631293639906	geckodriver	INFO	Listening on 127.0.0.1:54394
+1631293642938	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Game\\AppData\\Local\\Temp\\rust_mozprofilea2ONs2"
+*** You are running in headless mode.
+1631293643299	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Game\\AppData\\Local\\Temp\\rust_mozprofilea2ONs2\\search.json.mozlz4", (void 0)))
+1631293644428	Marionette	INFO	Listening on port 54407
+1631293644460	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://yep.video.yahoo.com/oath/js/1/oath-player.js, line 4: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585). ()
+JavaScript warning: https://yep.video.yahoo.com/oath/js/1/oath-player.js, line 4: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585). ()
+1631293648916	Marionette	INFO	Stopped listening on port 54407
+[Parent 12312, IPC I/O Parent] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+1631293649753	geckodriver	INFO	Listening on 127.0.0.1:54606
+1631293652764	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\Game\\AppData\\Local\\Temp\\rust_mozprofileWW2lX9"
+*** You are running in headless mode.
+1631293653114	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\Game\\AppData\\Local\\Temp\\rust_mozprofileWW2lX9\\search.json.mozlz4", (void 0)))
+1631293654165	Marionette	INFO	Listening on port 54617
+1631293654282	Marionette	WARN	TLS certificate errors will be ignored for this session
+1631293658622	Marionette	INFO	Stopped listening on port 54617
+JavaScript error: , line 0: InvalidStateError: An attempt was made to use an object that is not, or is no longer, usable
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: resource://gre/modules/Sqlite.jsm, line 1030: Error: Sqlite.jsm has been shutdown. Cannot open connection to: C:\Users\Game\AppData\Local\Temp\rust_mozprofileWW2lX9\protections.sqlite
