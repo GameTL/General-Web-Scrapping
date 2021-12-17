@@ -15,3 +15,11 @@ more efficient, using less CPU Time
 
 NEW
 Loggging Nicehash balance using Nicehash API
+
+
+###################################################
+How to create a batch file
+
+e:
+cd "E:\Personal - GDrive\Cron Jobs\Logging Crypto Prices - 2021.05(May). 24"
+C:\Anaconda3\python.exe .\Log_Prices.py

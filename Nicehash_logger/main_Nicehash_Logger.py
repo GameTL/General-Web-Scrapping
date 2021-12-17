@@ -31,7 +31,7 @@ if __name__ == '__main__' :
     print('1. :\t' , timeit.timeit(get_btc,number =1), 'milliseconds')
     print('2. :\t' , timeit.timeit(get_eth,number =1), 'milliseconds') """
     
-    with open("NiceHashBalance.csv", "a") as file:
+    with open("Nicehash_logger/NiceHashBalance.csv", "a") as file:
         enitites = [get_time(), get_balance(private_api)]
         for enity in enitites:
             file.write('"' + str(enity) + '",')

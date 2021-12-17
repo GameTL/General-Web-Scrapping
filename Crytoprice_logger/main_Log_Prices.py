@@ -35,7 +35,7 @@ if __name__ == '__main__' :
     print('1. :\t' , timeit.timeit(get_btc,number =1), 'milliseconds')
     print('2. :\t' , timeit.timeit(get_eth,number =1), 'milliseconds') """
     
-    with open("BitCoinPriceLogging.csv", "a") as file:
+    with open("Crytoprice_logger/BitCoinPriceLogging.csv", "a") as file:
         enitites = [get_time(), btc_usd, eth_usd, eth_btc, btc_thb, eth_thb]
         for enity in enitites:
             file.write('"' + str(enity) + '",')
