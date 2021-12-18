@@ -23,13 +23,15 @@ def get_time():
     return time.time()
 
 
-key, secret, organisation_id = get_api_data()
-private_api = nh.private_api(HOST, organisation_id, key, secret)
+
 
 if __name__ == '__main__' :
     """ import timeit
     print('1. :\t' , timeit.timeit(get_btc,number =1), 'milliseconds')
     print('2. :\t' , timeit.timeit(get_eth,number =1), 'milliseconds') """
+    
+    key, secret, organisation_id = get_api_data()
+    private_api = nh.private_api(HOST, organisation_id, key, secret)
     
     with open("Nicehash_logger/NiceHashBalance.csv", "a") as file:
         enitites = [get_time(), get_balance(private_api)]
