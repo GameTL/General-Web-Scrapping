@@ -1,9 +1,7 @@
 # log BTC-USD, ETH-BTC, ETH-USD 
-# USD this the master
-# based on this https://www.scrapingbee.com/blog/selenium-python/
-# interpreter Anaconda 3.8.5 with clearterminal
-# XPATH == path for fetched html
 # https://tcoil.info/how-to-get-price-data-for-bitcoin-and-cryptocurrencies-with-python-json-restful-api/
+
+#* Log Crypto Price v3.2
 #%%
 import time
 import requests
