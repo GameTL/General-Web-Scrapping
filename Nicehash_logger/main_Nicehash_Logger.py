@@ -1,14 +1,17 @@
+
+#* Nicehash Balance Logging v1.4
+
+from Crytoprice_logger.main_Log_Prices import CSV_PATH, ICON_PATH
 from nicehash import nicehash as nh
-import time
-import platform
+from datetime import datetime
+import logger
 
-#* Nicehash Balance Logging v1.2
-##########Settings############
-
+####SETUP####
 #* Set the Path for API Keys, Secret Keys & Organisation ID in this order
 API_LOCATION = "C:/#Keys/NicehashAPIKeys.txt" # My personal API Keys | REMOVE
 HOST = 'https://api2.nicehash.com'
-
+CSV_PATH = "Nicehash_logger/NiceHashBalance.csv"
+ICON_PATH = "dependances\python-logo.png"
 ###############S##############
 
 def get_api_data():
@@ -23,18 +26,6 @@ def get_balance(private_api):
     my_accounts = private_api.get_accounts()
     return my_accounts['total']["totalBalance"] # 0.00300251 BTC
 
-def get_time():
-    return time.time()
-
-def error_notification(message):
-    if platform.system() == 'Windows':
-        from win10toast import ToastNotifier
-        # create an object to ToastNotifier class
-        n = ToastNotifier()
-        
-        n.show_toast("Nicehash Logger", message, duration = 15, icon_path = "dependances\python logo.png")
-
-
 
 if __name__ == '__main__' :
     """ import timeit
@@ -44,21 +35,7 @@ if __name__ == '__main__' :
         key, secret, organisation_id = get_api_data()   
         private_api = nh.private_api(HOST, organisation_id, key, secret)
     except:
-        error_notification("Error occured while logging into Nicehash")
+        logger.error_notification("Error occured while logging into Nicehash")
 
-    try:
-        with open("Nicehash_logger/NiceHashBalance.csv", "a") as file:
-            enitites = [get_time(), get_balance(private_api)]
-            for enity in enitites:
-                file.write('"' + str(enity) + '",')
-            file.write("\n")
-        print("""Nichhash Balanced Logged: {}w
-
-DONE
-DONE""".format(enitites))
-        time.sleep(3) 
-    except PermissionError:
-        error_notification("PermissionError: CSV is being opened by another program")
-    except Exception as e:
-        error_notification("Error: {}".format(e))
+    logger.log2csv(CSV_PATH,[get_balance(private_api)], ICON_PATH)
 

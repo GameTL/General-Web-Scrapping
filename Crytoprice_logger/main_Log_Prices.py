@@ -1,53 +1,26 @@
 # log BTC-USD, ETH-BTC, ETH-USD 
 # https://tcoil.info/how-to-get-price-data-for-bitcoin-and-cryptocurrencies-with-python-json-restful-api/
 
-#* Log Crypto Price v3.2
-#%%
-import time
+#* Log Crypto Price v3.4
+
 import requests
-from datetime import datetime
-import platform
+import logger
 
 ####SETUP####
-
+CSV_PATH = "Crytoprice_logger/BitCoinPriceLogging.csv"
+URL = 'https://min-api.cryptocompare.com/data/price'
+ICON_PATH = "dependances\python-logo.png"
 #############
 
-
 def get_current_data(from_sym, to_sym):
-    url = 'https://min-api.cryptocompare.com/data/price'    
     
     parameters = {'fsym': from_sym, 'tsyms': to_sym }
     # response comes as json
-    response = requests.get(url, params=parameters)   
+    response = requests.get(URL, params=parameters)   
     #https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=USD Example of what the link looks like with the parameterss
     data = response.json()
     
     return data[str(list(data)[0])]
-
-def get_time():
-    return time.time()
-
-def log_csv():
-    with open("Crytoprice_logger/BitCoinPriceLogging.csv", "a") as file:
-        enitites = [get_time(), btc_usd, eth_usd, eth_btc, btc_thb, eth_thb]
-        for enity in enitites:
-            file.write('"' + str(enity) + '",')
-        file.write("\n")
-    print("""Cryto price logged: {}
-
-DONE
-DONE""".format(enitites))
-    time.sleep(3) 
-
-def error_notification(message):
-    if platform.system() == 'Windows':
-        from win10toast import ToastNotifier
-        # create an object to ToastNotifier class
-        n = ToastNotifier()
-        
-        n.show_toast("Crypto Logger", message, duration = 15, icon_path = "dependances\python logo.png")
-
-
 
 if __name__ == '__main__' :
     """ import timeit
@@ -58,15 +31,6 @@ if __name__ == '__main__' :
     eth_btc = get_current_data('ETH','BTC')
     btc_thb = get_current_data('BTC','THB')
     eth_thb = get_current_data('ETH','THB')
-    
-    try:
-        log_csv()
-    except PermissionError:
-        error_notification("PermissionError: CSV is being opened by another program")
-    except Exception as e:
-        error_notification("Error: {}".format(e))
 
-    
-    
-
+    logger.log2csv(CSV_PATH,[btc_usd, eth_usd, eth_btc, btc_thb, eth_thb], ICON_PATH)
 
