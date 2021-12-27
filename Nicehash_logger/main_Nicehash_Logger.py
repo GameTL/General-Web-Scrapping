@@ -4,7 +4,7 @@
 from Crytoprice_logger.main_Log_Prices import CSV_PATH, ICON_PATH
 from nicehash import nicehash as nh
 from datetime import datetime
-import logger
+import dependances.logger as logger
 
 ####SETUP####
 #* Set the Path for API Keys, Secret Keys & Organisation ID in this order

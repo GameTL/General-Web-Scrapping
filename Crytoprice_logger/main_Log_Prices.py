@@ -4,7 +4,7 @@
 #* Log Crypto Price v3.4
 
 import requests
-import logger
+import dependances.logger as logger
 
 ####SETUP####
 CSV_PATH = "Crytoprice_logger/BitCoinPriceLogging.csv"
