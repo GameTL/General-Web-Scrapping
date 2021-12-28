@@ -1,11 +1,12 @@
 # log BTC-USD, ETH-BTC, ETH-USD 
 # https://tcoil.info/how-to-get-price-data-for-bitcoin-and-cryptocurrencies-with-python-json-restful-api/
 
-#* Log Crypto Price v3.4
+#* Log Crypto Price v3.5.1
 
 import requests
-import dependances.logger as logger
-
+import sys
+sys.path.append('dependances')
+import logger
 ####SETUP####
 CSV_PATH = "Crytoprice_logger/BitCoinPriceLogging.csv"
 URL = 'https://min-api.cryptocompare.com/data/price'

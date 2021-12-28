@@ -1,11 +1,11 @@
 
-#* Nicehash Balance Logging v1.4
+#* Nicehash Balance Logging v1.5.1
 
-from Crytoprice_logger.main_Log_Prices import CSV_PATH, ICON_PATH
 from nicehash import nicehash as nh
 from datetime import datetime
-import dependances.logger as logger
-
+import sys
+sys.path.append('dependances')
+import logger
 ####SETUP####
 #* Set the Path for API Keys, Secret Keys & Organisation ID in this order
 API_LOCATION = "C:/#Keys/NicehashAPIKeys.txt" # My personal API Keys | REMOVE

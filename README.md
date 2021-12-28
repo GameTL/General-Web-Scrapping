@@ -23,6 +23,10 @@
 
   - Add Human readable date time to the second column of the csv file, given the first column is time in seconds.
 
+- ### **X.5.1 - Nicehash balance logging & Cryptocurrency price logging**
+
+  - Patch - Fix a breaking import form logger.py. appending the dependances folder to the import path.
+
 ## 2021/12/21
 
 - ### **1.1 - Logger Library**
